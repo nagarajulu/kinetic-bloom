@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CheckCircle2, AlertTriangle, Maximize2, X, Sparkles, Compass, ShieldAlert } from "lucide-react";
 import type { TransientStep } from "../types";
 import { PediatricOtDiagram } from "./PediatricOtDiagrams";
+import { getAssetUrl } from "../utils/assets";
 
 interface StepIllustrationProps {
   step: TransientStep;
@@ -18,7 +19,8 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
   isLiteralMode = false,
   sequenceImageUrl,
 }) => {
-  const activeImage = step.imageUrl || fallbackImageUrl;
+  const activeImage = getAssetUrl(step.imageUrl || fallbackImageUrl);
+  const resolvedSequenceUrl = getAssetUrl(sequenceImageUrl);
   const hasDiagram = Boolean(step.diagramType);
   const hasDedicatedStepPhoto = Boolean(
     sequenceImageUrl || (step.imageUrl && fallbackImageUrl && step.imageUrl !== fallbackImageUrl)
@@ -118,10 +120,10 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
               isLiteralMode={isLiteralMode}
             />
           </div>
-        ) : sequenceImageUrl ? (
+        ) : resolvedSequenceUrl ? (
           <div className="w-full h-full overflow-hidden flex items-center justify-center bg-slate-100">
             <img
-              src={sequenceImageUrl}
+              src={resolvedSequenceUrl}
               alt={step.title}
               loading="lazy"
               decoding="async"
@@ -311,10 +313,10 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
                   isLiteralMode={isLiteralMode}
                   className="w-full h-full max-h-[300px]"
                 />
-              ) : sequenceImageUrl ? (
+              ) : resolvedSequenceUrl ? (
                 <div className="w-full h-full overflow-hidden flex items-center justify-center bg-slate-100 rounded-xl">
                   <img
-                    src={sequenceImageUrl}
+                    src={resolvedSequenceUrl}
                     alt={step.title}
                     loading="lazy"
                     decoding="async"

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Play, ShieldCheck, ExternalLink } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 interface PrivacyVideoPlayerProps {
   youtubeId: string;
@@ -55,7 +56,7 @@ export const PrivacyVideoPlayer = ({
     <div className="aspect-video w-full rounded-2xl overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 p-5 flex flex-col items-center justify-center text-center text-white relative border border-slate-700 shadow-md">
       {thumbnailUrl && (
         <img
-          src={thumbnailUrl}
+          src={getAssetUrl(thumbnailUrl)}
           alt={title}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-xs"

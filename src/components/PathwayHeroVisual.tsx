@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { IntegrationExerciseOption, TransientStep } from "../types";
 import { PediatricOtDiagram } from "./PediatricOtDiagrams";
 import { Activity, CheckCircle2 } from "lucide-react";
+import { getAssetUrl } from "../utils/assets";
 
 interface PathwayHeroVisualProps {
   pathway: IntegrationExerciseOption;
@@ -23,7 +24,8 @@ export const PathwayHeroVisual: React.FC<PathwayHeroVisualProps> = ({
       ? pathway.transientSteps[activeStepIndex]
       : pathway.transientSteps?.[0];
 
-  const activePhoto = currentStep?.imageUrl || pathway.imageUrl || fallbackImageUrl;
+  const activePhoto = getAssetUrl(currentStep?.imageUrl || pathway.imageUrl || fallbackImageUrl);
+  const resolvedSequenceUrl = getAssetUrl(pathway.transientSequenceImageUrl);
   const hasDedicatedPathwayPhoto = Boolean(
     pathway.transientSequenceImageUrl ||
     (pathway.category === "primary_movement" && pathway.imageUrl) ||
@@ -99,10 +101,10 @@ export const PathwayHeroVisual: React.FC<PathwayHeroVisualProps> = ({
               compensationWarning={currentStep?.compensationWarning}
             />
           </div>
-        ) : pathway.transientSequenceImageUrl ? (
+        ) : resolvedSequenceUrl ? (
           <div className="w-full h-full max-h-[220px] overflow-hidden flex items-center justify-center bg-slate-100 rounded-xl">
             <img
-              src={pathway.transientSequenceImageUrl}
+              src={resolvedSequenceUrl}
               alt={pathway.name}
               loading="lazy"
               decoding="async"

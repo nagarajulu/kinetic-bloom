@@ -4,6 +4,7 @@ import { REFLEX_DATABASE } from '../data/reflexData';
 import { StepIllustration } from './StepIllustration';
 import { PathwayHeroVisual } from './PathwayHeroVisual';
 import { PrivacyVideoPlayer } from './PrivacyVideoPlayer';
+import { getAssetUrl } from '../utils/assets';
 import type { ReflexId, ReflexTier } from '../types';
 
 interface ReflexLibraryProps {
@@ -445,7 +446,7 @@ export const ReflexLibrary: React.FC<ReflexLibraryProps> = ({ onNavigateToBooks 
               <div className="space-y-2">
                 <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm aspect-4/3 bg-slate-100 flex items-center justify-center">
                   <img
-                    src={activePathway.transientSequenceImageUrl}
+                    src={getAssetUrl(activePathway.transientSequenceImageUrl)}
                     alt="Transient Steps Progression"
                     loading="lazy"
                     decoding="async"
@@ -483,7 +484,7 @@ export const ReflexLibrary: React.FC<ReflexLibraryProps> = ({ onNavigateToBooks 
               <div className="space-y-2">
                 <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm aspect-4/3 bg-slate-100 flex items-center justify-center">
                   <img
-                    src={reflex.assessment.retainedVsIntegratedImageUrl}
+                    src={getAssetUrl(reflex.assessment.retainedVsIntegratedImageUrl)}
                     alt="Retained vs Integrated Movement Comparison"
                     loading="lazy"
                     decoding="async"

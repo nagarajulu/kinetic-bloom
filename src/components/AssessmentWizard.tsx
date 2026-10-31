@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { REFLEX_DATABASE } from '../data/reflexData';
 import { PrivacyVideoPlayer } from './PrivacyVideoPlayer';
+import { getAssetUrl } from '../utils/assets';
 import type { ReflexId, AssessmentScores, LateralizedScore } from '../types';
 
 interface AssessmentWizardProps {
@@ -652,7 +653,7 @@ export const AssessmentWizard = ({
             <div className="space-y-1.5">
               <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner max-h-64 flex items-center justify-center">
                 <img
-                  src={currentReflex.assessment.retainedVsIntegratedImageUrl}
+                  src={getAssetUrl(currentReflex.assessment.retainedVsIntegratedImageUrl)}
                   alt={`${currentReflex.name} Retained vs Integrated`}
                   loading="lazy"
                   decoding="async"
