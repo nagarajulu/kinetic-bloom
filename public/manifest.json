@@ -1,0 +1,17 @@
+{
+  "short_name": "KineticBloom",
+  "name": "KineticBloom Primitive Reflex Coach",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "48x48 72x72 96x96 144x144 192x192 512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#042f2e",
+  "theme_color": "#0f766e",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "description": "Evidence-based pediatric primitive reflex observation guide and 10-minute home co-regulation circuits."
+}

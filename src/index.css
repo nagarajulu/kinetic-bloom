@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-breathe {
+  animation: breathe 8s ease-in-out infinite;
+}
+
+/* Sensory-Safe Dark Mode Overrides */
+.calm-dark-mode {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+.calm-dark-mode .bg-white {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.calm-dark-mode .bg-slate-50 {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+.calm-dark-mode .text-slate-900,
+.calm-dark-mode .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+.calm-dark-mode .text-slate-700,
+.calm-dark-mode .text-slate-600,
+.calm-dark-mode .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.calm-dark-mode header,
+.calm-dark-mode footer {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* Pediatric OT & School IEP Clinical Print Stylesheet */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  header,
+  footer,
+  nav,
+  button,
+  .print-hidden {
+    display: none !important;
+  }
+  .shadow-xs,
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+  .max-w-2xl,
+  .max-w-3xl,
+  .max-w-4xl,
+  .max-w-5xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .grid {
+    display: grid !important;
+  }
+  div, section, article {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+/* WCAG 2.2 AA prefers-reduced-motion: reduce */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-breathe {
+    animation: none !important;
+  }
+}
