@@ -23,5 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
-# Temporary communication signals
+# Temporary communication signals and iteration feedback docs
 *.rerun
+*_FEEDBACK*.md
+*AUDIT*.md
+*VERIFICATION*.md
+MASTER_LAUNCH*.md
