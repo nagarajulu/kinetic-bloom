@@ -481,12 +481,25 @@ export const CircuitRunner = ({
           )}
 
           {preZone !== 'red' && (
-            <button
-              onClick={() => setStep('deck_select')}
-              className="w-full py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
-            >
-              Continue to Select Daily Circuit Deck ➔
-            </button>
+            <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setStep('exercising');
+                  handleSelectCard(0);
+                }}
+                className="flex-1 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
+              >
+                <span>⚡ Start 10-Min Flow Directly</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setStep('deck_select')}
+                className="py-3.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-2xl transition-all text-xs sm:text-sm cursor-pointer flex items-center justify-center"
+              >
+                Customize Deck ⚙️
+              </button>
+            </div>
           )}
         </div>
       )}
@@ -1289,12 +1302,25 @@ export const CircuitRunner = ({
             />
           </div>
 
-          <button
-            onClick={finishSession}
-            className="w-full py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
-          >
-            Save Today's Session & Streak 🌟
-          </button>
+          <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+            <button
+              type="button"
+              onClick={finishSession}
+              className="flex-1 py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
+            >
+              Save to Progress Log & Streak 🌟
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setStep('completed');
+              }}
+              className="py-3 px-5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-2xl text-xs sm:text-sm transition-all cursor-pointer flex items-center justify-center"
+              title="Finish session without saving notes or modifying logs"
+            >
+              Skip Logging (Finish Freely)
+            </button>
+          </div>
         </div>
       )}
 

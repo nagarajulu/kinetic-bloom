@@ -25,9 +25,9 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
   const hasDedicatedStepPhoto = Boolean(
     sequenceImageUrl || (step.imageUrl && fallbackImageUrl && step.imageUrl !== fallbackImageUrl)
   );
-  const [cardView, setCardView] = useState<"diagram" | "photo">(hasDiagram ? "diagram" : "photo");
+  const [cardView, setCardView] = useState<"diagram" | "photo">(activeImage || resolvedSequenceUrl ? "photo" : "diagram");
   const [showModal, setShowModal] = useState(false);
-  const [modalTab, setModalTab] = useState<"diagram" | "photo">("diagram");
+  const [modalTab, setModalTab] = useState<"diagram" | "photo">(activeImage || resolvedSequenceUrl ? "photo" : "diagram");
 
   useEffect(() => {
     if (!showModal) return;
@@ -82,7 +82,7 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
         className="relative h-48 sm:h-52 w-full bg-slate-50 flex items-center justify-center cursor-pointer group overflow-hidden border-b border-slate-100"
         onClick={() => setShowModal(true)}
       >
-        {/* Toggle between Diagram and Reference Photo */}
+        {/* Toggle between Reference Photo and Diagram */}
         {hasDiagram && activeImage && (
           <div
             className="absolute top-2 right-2 z-10 flex bg-white/95 backdrop-blur-xs p-0.5 rounded-lg border border-slate-200 shadow-xs text-[10px]"
@@ -90,21 +90,21 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
           >
             <button
               type="button"
-              onClick={() => setCardView("diagram")}
-              className={`px-2 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
-                cardView === "diagram" ? "bg-teal-700 text-white shadow-xs" : "text-slate-600 hover:text-slate-900"
-              }`}
-            >
-              📐 Diagram
-            </button>
-            <button
-              type="button"
               onClick={() => setCardView("photo")}
               className={`px-2 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
                 cardView === "photo" ? "bg-teal-700 text-white shadow-xs" : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              {hasDedicatedStepPhoto ? "📷 Step Photo" : "📷 Reflex Overview"}
+              {hasDedicatedStepPhoto ? "📷 Clinical Posture" : "📷 Real Photo"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setCardView("diagram")}
+              className={`px-2 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
+                cardView === "diagram" ? "bg-teal-700 text-white shadow-xs" : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              📐 Joint Guide
             </button>
           </div>
         )}
@@ -274,17 +274,9 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
               </button>
             </div>
 
-            {/* Modal View Selector: Diagram vs Photo */}
+            {/* Modal View Selector: Photo vs Diagram */}
             <div className="flex items-center justify-between gap-2 pb-1">
               <div className="flex bg-slate-100 p-1 rounded-xl">
-                <button
-                  onClick={() => setModalTab("diagram")}
-                  className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                    modalTab === "diagram" ? "bg-white text-teal-800 shadow-xs" : "text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  📐 Anatomical Biomechanics
-                </button>
                 {activeImage && (
                   <button
                     onClick={() => setModalTab("photo")}
@@ -292,9 +284,17 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
                       modalTab === "photo" ? "bg-white text-teal-800 shadow-xs" : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
-                    {hasDedicatedStepPhoto ? "📷 Step Photo Reference" : "📷 Reflex Overview Photo"}
+                    {hasDedicatedStepPhoto ? "📷 Clinical Posture Photo" : "📷 Real Photo Reference"}
                   </button>
                 )}
+                <button
+                  onClick={() => setModalTab("diagram")}
+                  className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    modalTab === "diagram" ? "bg-white text-teal-800 shadow-xs" : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  📐 Joint Angles Guide
+                </button>
               </div>
               <span className="text-[11px] text-slate-400 hidden sm:inline">
                 Zero-PII Pedagogical Guide

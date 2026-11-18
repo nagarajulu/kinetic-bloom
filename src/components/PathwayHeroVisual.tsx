@@ -31,7 +31,9 @@ export const PathwayHeroVisual: React.FC<PathwayHeroVisualProps> = ({
     (pathway.category === "primary_movement" && pathway.imageUrl) ||
     (pathway.imageUrl && fallbackImageUrl && pathway.imageUrl !== fallbackImageUrl)
   );
-  const [viewMode, setViewMode] = useState<"diagram" | "photo">("diagram");
+  const [viewMode, setViewMode] = useState<"diagram" | "photo">(
+    activePhoto || resolvedSequenceUrl ? "photo" : "diagram"
+  );
 
   const getModalityBadge = () => {
     switch (pathway.category) {
@@ -66,26 +68,26 @@ export const PathwayHeroVisual: React.FC<PathwayHeroVisualProps> = ({
           )}
         </span>
 
-        {/* View mode toggle */}
+        {/* View mode toggle: Photo first */}
         <div className="flex bg-slate-200/60 p-0.5 rounded-lg text-[10px]">
-          <button
-            onClick={() => setViewMode("diagram")}
-            className={`px-2 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
-              viewMode === "diagram" ? "bg-white text-teal-800 shadow-xs" : "text-slate-600 hover:text-slate-900"
-            }`}
-          >
-            📐 Vector Guide
-          </button>
           {activePhoto && (
             <button
               onClick={() => setViewMode("photo")}
-              className={`px-2 py-0.5 rounded-md font-bold transition-all cursor-pointer ${
+              className={`px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
                 viewMode === "photo" ? "bg-white text-teal-800 shadow-xs" : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              {hasDedicatedPathwayPhoto ? "📷 Photo" : "📷 Reflex Overview"}
+              {hasDedicatedPathwayPhoto ? "📷 Real Posture Photo" : "📷 Reflex Photo"}
             </button>
           )}
+          <button
+            onClick={() => setViewMode("diagram")}
+            className={`px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
+              viewMode === "diagram" ? "bg-white text-teal-800 shadow-xs" : "text-slate-600 hover:text-slate-900"
+            }`}
+          >
+            📐 Joint Guide
+          </button>
         </div>
       </div>
 

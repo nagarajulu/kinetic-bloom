@@ -234,14 +234,14 @@ export function App() {
                 <span className="hidden lg:inline">{isDark ? 'Calm Dark' : 'Standard'}</span>
               </button>
 
-              {/* Tab Navigation */}
+              {/* Simplified Tab Navigation */}
               <nav className="flex items-center gap-1 sm:gap-1.5" aria-label="Main Navigation">
                 {[
-                  { id: 'circuit', label: '10-Min Circuit', shortLabel: 'Circuit', icon: PlayCircle },
-                  { id: 'assessment', label: 'Movement Guide', shortLabel: 'Guide', icon: ClipboardList },
-                  { id: 'library', label: 'Handbook', shortLabel: 'Handbook', icon: BookOpen },
-                  { id: 'books', label: 'Books', shortLabel: 'Books', icon: Bookmark },
-                  { id: 'progress', label: 'Progress', shortLabel: 'Progress', icon: BarChart3 }
+                  { id: 'circuit', label: 'Daily Flow', shortLabel: 'Flow', icon: PlayCircle },
+                  { id: 'library', label: 'Exercise Library', shortLabel: 'Exercises', icon: BookOpen },
+                  { id: 'assessment', label: 'Reflex Check', shortLabel: 'Check', icon: ClipboardList },
+                  { id: 'progress', label: 'Progress & Logs', shortLabel: 'Progress', icon: BarChart3 },
+                  { id: 'books', label: 'Research', shortLabel: 'Research', icon: Bookmark }
                 ].map((tab) => {
                   const Icon = tab.icon;
                   const isActive = activeTab === tab.id;
@@ -269,6 +269,65 @@ export function App() {
             </div>
           </div>
         </header>
+
+        {/* Quick Co-Regulation SOS / Routine Shortcut Strip */}
+        <section aria-label="Quick State Resets" className={`border-b py-2 px-4 transition-colors ${
+          isDark ? 'bg-slate-800/80 border-slate-700/60' : 'bg-slate-50/90 border-slate-200/70'
+        }`}>
+          <div className="max-w-5xl mx-auto flex items-center justify-between gap-2 overflow-x-auto text-[11px] font-semibold">
+            <span className="text-slate-400 shrink-0 hidden sm:inline">⚡ Quick Resets:</span>
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  navigateToTab('library');
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('tab', 'library');
+                  url.searchParams.set('reflex', 'fpr');
+                  window.history.pushState({}, '', url.toString());
+                  window.dispatchEvent(new PopStateEvent('popstate'));
+                }}
+                className="px-2.5 py-1 rounded-full bg-red-100/80 hover:bg-red-200 text-red-800 border border-red-200 transition-all flex items-center gap-1 cursor-pointer"
+                title="Instant gentle co-regulation holds for meltdowns and sensory overload"
+              >
+                <span>🆘 Meltdown Calm Hold</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  navigateToTab('library');
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('tab', 'library');
+                  url.searchParams.set('reflex', 'stnr');
+                  window.history.pushState({}, '', url.toString());
+                  window.dispatchEvent(new PopStateEvent('popstate'));
+                }}
+                className="px-2.5 py-1 rounded-full bg-amber-100/80 hover:bg-amber-200 text-amber-900 border border-amber-200 transition-all flex items-center gap-1 cursor-pointer"
+                title="Desk and posture reset for attention and schoolwork"
+              >
+                <span>🧘 Focus & Desk Reset</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  navigateToTab('library');
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('tab', 'library');
+                  url.searchParams.set('reflex', 'tlr');
+                  window.history.pushState({}, '', url.toString());
+                  window.dispatchEvent(new PopStateEvent('popstate'));
+                }}
+                className="px-2.5 py-1 rounded-full bg-indigo-100/80 hover:bg-indigo-200 text-indigo-900 border border-indigo-200 transition-all flex items-center gap-1 cursor-pointer"
+                title="Gentle meatball tuck & spinal relaxation for bedtime"
+              >
+                <span>🌙 Bedtime Wind-Down</span>
+              </button>
+            </div>
+            <span className="text-slate-400 text-[10px] hidden md:inline ml-auto">
+              100% Free & Private Home Resource
+            </span>
+          </div>
+        </section>
 
         {/* Main Content Area */}
         <main className="flex-1 max-w-5xl w-full mx-auto p-4 sm:p-6 lg:p-8">
