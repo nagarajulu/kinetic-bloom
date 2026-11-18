@@ -18,13 +18,16 @@ import {
   Compass,
   ArrowRight,
   HandHeart,
-  Activity
+  Activity,
+  Printer,
+  Heart
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { REFLEX_DATABASE } from '../data/reflexData';
 import { StepIllustration } from './StepIllustration';
 import { PathwayHeroVisual } from './PathwayHeroVisual';
 import { PrivacyVideoPlayer } from './PrivacyVideoPlayer';
+import { ReflexHandoutModal } from './ReflexHandoutModal';
 import {
   playChime,
   playPulseTick,
@@ -139,6 +142,7 @@ export const CircuitRunner = ({
     childProfile?.supportNeed === 'extensive_hands_on' ||
     childProfile?.supportLevel === 'level3'
   ));
+  const [handoutReflexId, setHandoutReflexId] = useState<ReflexId | null>(null);
 
   // Transition buffer countdown
   const [bufferTimeLeft, setBufferTimeLeft] = useState(10);
@@ -517,6 +521,17 @@ export const CircuitRunner = ({
             <p className="text-xs text-slate-500">
               Recommended based on your screener scores and the brainstem-to-cortex hierarchy:
             </p>
+            <div className="flex justify-center pt-1">
+              <button
+                type="button"
+                onClick={() => setHandoutReflexId(activeDeck[0] || 'moro')}
+                className="px-3.5 py-1.5 bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+                title="Print 1-page clinical routine handout and 30-day fridge tracker"
+              >
+                <Printer className="w-3.5 h-3.5 text-teal-700" />
+                <span>🖨️ Print Fridge Routine Handout (PDF)</span>
+              </button>
+            </div>
           </div>
 
           <div className="space-y-3">
@@ -1138,6 +1153,36 @@ export const CircuitRunner = ({
                   </button>
                 )}
 
+                {/* 1-Tap Meltdown Bailout */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsRunning(false);
+                    try { window.speechSynthesis.cancel(); } catch {}
+                    setActiveDeck(['fpr', 'moro', 'tlr']);
+                    setSelectedDeckName('🆘 Meltdown Co-Regulation Hold');
+                    setPathwayIndices({ fpr: 1, moro: 1, tlr: 1 });
+                    setCurrentCardIndex(0);
+                    setTimeLeft(120);
+                  }}
+                  className="px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer"
+                  title="Child crying or overwhelmed? 1-Tap bailout to calming co-regulation hold"
+                >
+                  <Heart className="w-3.5 h-3.5 text-rose-600 fill-rose-600 shrink-0" />
+                  <span>🆘 Meltdown Bailout</span>
+                </button>
+
+                {/* 1-Tap Printable Handout */}
+                <button
+                  type="button"
+                  onClick={() => setHandoutReflexId(currentReflexId)}
+                  className="px-2.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer"
+                  title="Print clinical handout & fridge tracker for this reflex"
+                >
+                  <Printer className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+                  <span className="hidden sm:inline">Handout</span>
+                </button>
+
                 <button
                   onClick={handleDrillFinished}
                   className="flex-1 sm:flex-initial px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer"
@@ -1438,6 +1483,13 @@ export const CircuitRunner = ({
           </div>
         </div>
       )}
+
+      {/* 1-Click Printable Parent Handout Modal */}
+      <ReflexHandoutModal
+        isOpen={Boolean(handoutReflexId)}
+        initialReflexId={handoutReflexId || 'moro'}
+        onClose={() => setHandoutReflexId(null)}
+      />
     </div>
   );
 };

@@ -46,6 +46,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "fpr_primary",
+        "transientSequenceImageUrl": "/images/fpr_transient_steps.jpg",
         "name": "Pathway 1: Somatic Melting & Side Cradle",
         "category": "primary_movement",
         "categoryLabel": "Primary Somatic Calming",
@@ -447,6 +448,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "moro_starfish",
+        "transientSequenceImageUrl": "/images/moro_transient_steps.jpg",
         "name": "Pathway 1: The Starfish Drill",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -518,8 +520,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
           "Speed ruins this exercise: forcing a full 5-second count on opening and closing rewires the sympathetic brainstem."
         ],
         "resistancePlayScript": "\u2b50 \"Cosmic Starfish\": We are gentle space starfish expanding to catch shooting stars, then curling up into our stardust cocoon!",
-        "imageUrl": "/images/moro_starfish.jpg",
-        "transientSequenceImageUrl": "/images/moro_transient_steps.jpg"
+        "imageUrl": "/images/moro_starfish.jpg"
       },
       {
         "id": "moro_passive_repatterning",
@@ -781,8 +782,8 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "id": "tlr",
     "name": "Tonic Labyrinthine Reflex (TLR)",
     "aka": "The Vestibular Muscle-Tone Split Reflex",
-    "tier": 1,
-    "tierName": "Tier 1: Autonomic Safety (Survival Foundation)",
+    "tier": 2,
+    "tierName": "Tier 2: Vestibular & Gravitational Tone",
     "tierDescription": "Governs the child's gravitational relationship to the earth. Modulates flexor and extensor muscle tone in response to head tilt above or below the spine.",
     "description": "When head tilts forward, entire body curls into flexion; when head tilts backward, entire body stiffens into extension. When retained, causes toe-walking, severe slouching, poor spatial awareness, motion sickness, and dyspraxia.",
     "functionalSigns": [
@@ -822,6 +823,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "tlr_superman_meatball",
+        "transientSequenceImageUrl": "/images/tlr_transient_steps.jpg",
         "name": "Pathway 1: Superman Prone to Meatball Supine",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -1183,6 +1185,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "landau_airplane",
+        "transientSequenceImageUrl": "/images/landau_transient_steps.jpg",
         "name": "Pathway 1: Prone Airplane & Swimming Dolphin",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -1483,6 +1486,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "galant_snow_angels",
+        "transientSequenceImageUrl": "/images/spinal_galant_transient_steps.jpg",
         "name": "Pathway 1: Synchronous 4-Limb Floor Snow Angels",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -1844,6 +1848,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "amphibian_lizard_slide",
+        "transientSequenceImageUrl": "/images/amphibian_transient_steps.jpg",
         "name": "Pathway 1: Prone Homolateral Amphibian Slide",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -2144,6 +2149,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "atnr_lizard",
+        "transientSequenceImageUrl": "/images/atnr_transient_steps.jpg",
         "name": "Pathway 1: Quadruped Lizard Crawl with Head Rotation",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -2505,6 +2511,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "stnr_cat_cow",
+        "transientSequenceImageUrl": "/images/stnr_transient_steps.jpg",
         "name": "Pathway 1: Quadruped Cat-Cow with Fixed Hip Isolation",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -2866,6 +2873,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "palmar_opposition",
+        "transientSequenceImageUrl": "/images/palmar_transient_steps.jpg",
         "name": "Pathway 1: Isolated Finger Opposition & Star Squeeze",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -3226,6 +3234,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "plantar_towel",
+        "transientSequenceImageUrl": "/images/plantar_transient_steps.jpg",
         "name": "Pathway 1: Calcaneal Grounded Towel Scrunch & Marble Pickup",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",
@@ -3525,6 +3534,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
     "exercisePathways": [
       {
         "id": "rooting_facial_massage",
+        "transientSequenceImageUrl": "/images/rooting_transient_steps.jpg",
         "name": "Pathway 1: Perioral Diamond Sweep & Fish Pucker",
         "category": "primary_movement",
         "categoryLabel": "Primary Active Exercise",

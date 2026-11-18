@@ -25,9 +25,13 @@ export const StepIllustration: React.FC<StepIllustrationProps> = ({
   const hasDedicatedStepPhoto = Boolean(
     sequenceImageUrl || (step.imageUrl && fallbackImageUrl && step.imageUrl !== fallbackImageUrl)
   );
-  const [cardView, setCardView] = useState<"diagram" | "photo">(activeImage || resolvedSequenceUrl ? "photo" : "diagram");
+  const [cardView, setCardView] = useState<"diagram" | "photo">(
+    resolvedSequenceUrl || hasDedicatedStepPhoto ? "photo" : (hasDiagram ? "diagram" : "photo")
+  );
   const [showModal, setShowModal] = useState(false);
-  const [modalTab, setModalTab] = useState<"diagram" | "photo">(activeImage || resolvedSequenceUrl ? "photo" : "diagram");
+  const [modalTab, setModalTab] = useState<"diagram" | "photo">(
+    resolvedSequenceUrl || hasDedicatedStepPhoto ? "photo" : (hasDiagram ? "diagram" : "photo")
+  );
 
   useEffect(() => {
     if (!showModal) return;

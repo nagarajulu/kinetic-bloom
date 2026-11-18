@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { REFLEX_DATABASE } from '../data/reflexData';
 import { PrivacyVideoPlayer } from './PrivacyVideoPlayer';
+import { ReflexHandoutModal } from './ReflexHandoutModal';
 import { getAssetUrl } from '../utils/assets';
 import type { ReflexId, AssessmentScores, LateralizedScore } from '../types';
 
@@ -76,6 +77,7 @@ export const AssessmentWizard = ({
     return 0;
   });
   const [viewMode, setViewMode] = useState<'deep_dive' | 'all_grid'>('deep_dive');
+  const [handoutReflexId, setHandoutReflexId] = useState<ReflexId | null>(null);
 
   useEffect(() => {
     try {
@@ -634,13 +636,24 @@ export const AssessmentWizard = ({
                 <p className="text-xs sm:text-sm text-slate-500">{currentReflex.aka}</p>
               </div>
 
-              <button
-                onClick={() => setShowAssessmentVideo(true)}
-                className="px-3 py-1.5 bg-red-50 text-red-700 hover:bg-red-100 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all shrink-0 cursor-pointer"
-                title="Watch 2-minute movement observation guide video"
-              >
-                <Video className="w-3.5 h-3.5 text-red-600" /> Watch OT Test Demo
-              </button>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setHandoutReflexId(currentReflex.id)}
+                  className="px-3 py-1.5 bg-teal-50 text-teal-800 hover:bg-teal-100 border border-teal-200 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer shadow-2xs"
+                  title="Print clinical parent handout & 30-day fridge tracker"
+                >
+                  <Printer className="w-3.5 h-3.5 text-teal-600" />
+                  <span className="hidden sm:inline">Print Handout</span>
+                </button>
+                <button
+                  onClick={() => setShowAssessmentVideo(true)}
+                  className="px-3 py-1.5 bg-red-50 text-red-700 hover:bg-red-100 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer"
+                  title="Watch 2-minute movement observation guide video"
+                >
+                  <Video className="w-3.5 h-3.5 text-red-600" /> Watch OT Test Demo
+                </button>
+              </div>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed">
@@ -915,6 +928,13 @@ export const AssessmentWizard = ({
           </div>
         </div>
       )}
+
+      {/* 1-Click Printable Parent Handout Modal */}
+      <ReflexHandoutModal
+        isOpen={Boolean(handoutReflexId)}
+        initialReflexId={handoutReflexId || 'moro'}
+        onClose={() => setHandoutReflexId(null)}
+      />
     </div>
   );
 };

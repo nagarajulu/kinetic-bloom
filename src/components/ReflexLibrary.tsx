@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Video, ShieldAlert, CheckCircle, Clock, Sparkles, Layers, Search, Check, X, BookOpen } from 'lucide-react';
+import { Video, ShieldAlert, CheckCircle, Clock, Sparkles, Layers, Search, Check, X, BookOpen, Printer } from 'lucide-react';
 import { REFLEX_DATABASE } from '../data/reflexData';
 import { StepIllustration } from './StepIllustration';
 import { PathwayHeroVisual } from './PathwayHeroVisual';
 import { PrivacyVideoPlayer } from './PrivacyVideoPlayer';
+import { ReflexHandoutModal } from './ReflexHandoutModal';
 import { getAssetUrl } from '../utils/assets';
 import type { ReflexId, ReflexTier } from '../types';
 
@@ -30,6 +31,7 @@ export const ReflexLibrary: React.FC<ReflexLibraryProps> = ({ onNavigateToBooks 
   const [videoMode, setVideoMode] = useState<'exercise' | 'assessment'>('exercise');
   const [isLiteralMode, setIsLiteralMode] = useState(false);
   const [showNeuroDeepDive, setShowNeuroDeepDive] = useState(false);
+  const [handoutReflexId, setHandoutReflexId] = useState<ReflexId | null>(null);
 
   const allReflexes = Object.values(REFLEX_DATABASE);
   const filteredReflexes = allReflexes.filter((r) => {
@@ -122,16 +124,26 @@ export const ReflexLibrary: React.FC<ReflexLibraryProps> = ({ onNavigateToBooks 
           ))}
         </div>
 
-        <div className="relative w-full sm:w-64">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            aria-label="Search symptoms or reflexes"
-            placeholder="Search symptoms or reflexes..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 bg-white rounded-xl border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-teal-500"
-          />
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="relative flex-1 sm:w-60">
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              aria-label="Search symptoms or reflexes"
+              placeholder="Search symptoms or reflexes..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-9 pr-3 py-2 bg-white rounded-xl border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-teal-500"
+            />
+          </div>
+          <button
+            onClick={() => setHandoutReflexId(selectedReflexId)}
+            className="flex items-center gap-1.5 px-3 py-2 bg-teal-700 hover:bg-teal-800 text-white rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer shrink-0"
+            title="Open printable fridge handout"
+          >
+            <Printer className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Print Handout</span>
+          </button>
         </div>
       </div>
 
@@ -172,6 +184,14 @@ export const ReflexLibrary: React.FC<ReflexLibraryProps> = ({ onNavigateToBooks 
             <span className="px-3 py-1 bg-amber-50 text-amber-800 text-xs font-semibold rounded-full flex items-center gap-1">
               <Clock className="w-3.5 h-3.5" /> {reflex.verification.durationWeeks}
             </span>
+            <button
+              onClick={() => setHandoutReflexId(reflex.id)}
+              className="flex items-center gap-1.5 px-3 py-1 bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200 rounded-full text-xs font-bold transition-all cursor-pointer shadow-xs"
+              title="Print 1-page clinical parent handout & 30-day fridge tracker"
+            >
+              <Printer className="w-3.5 h-3.5 text-teal-600" />
+              <span>Print Handout (PDF)</span>
+            </button>
           </div>
         </div>
 
@@ -674,6 +694,13 @@ export const ReflexLibrary: React.FC<ReflexLibraryProps> = ({ onNavigateToBooks 
           </button>
         </div>
       )}
+
+      {/* 1-Click Printable Parent Handout Modal */}
+      <ReflexHandoutModal
+        isOpen={Boolean(handoutReflexId)}
+        initialReflexId={handoutReflexId || "moro"}
+        onClose={() => setHandoutReflexId(null)}
+      />
     </div>
   );
 };
