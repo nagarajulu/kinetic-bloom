@@ -68,7 +68,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Dim the lights, minimize noise, and speak in a soothing low voice.",
             "parentCue": "\"We are curling up like a little baby animal in a safe cave.\"",
             "diagramType": "mat_setup",
-            "imageUrl": "/images/fear_paralysis.jpg",
+            "imageUrl": "/images/fpr_step_1.jpg",
             "alignmentCheck": "Loose fetal curl, dim lighting, soothing voice",
             "durationSeconds": 30,
             "breathCue": "Slow belly breaths in through nose"
@@ -81,7 +81,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Apply gentle, continuous calming pressure (about 1-2 lbs of weight).",
             "parentCue": "\"Feel my warm hands holding you safe and steady.\"",
             "diagramType": "fetal_tuck",
-            "imageUrl": "/images/fear_paralysis.jpg",
+            "imageUrl": "/images/fpr_step_2.jpg",
             "alignmentCheck": "Warm dual hands on chest and spine",
             "durationSeconds": 45,
             "breathCue": "Synchronize breathing with parent"
@@ -94,7 +94,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Gently rock child's torso forward and backward with your hands for 2 minutes.",
             "parentCue": "\"Matching our breath to the ocean waves.\"",
             "diagramType": "rhythmic_infant_rock",
-            "imageUrl": "/images/fear_paralysis.jpg",
+            "imageUrl": "/images/fpr_step_3.jpg",
             "alignmentCheck": "Gentle 60 BPM rocking cadence, loose neck",
             "durationSeconds": 60,
             "breathCue": "Slow exhale as torso rocks forward"
@@ -107,7 +107,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Keep hands gently resting for 30 seconds of quiet stillness.",
             "parentCue": "\"Soft and heavy like melted butter in the sunshine.\"",
             "diagramType": "mat_setup",
-            "imageUrl": "/images/fear_paralysis.jpg",
+            "imageUrl": "/images/fpr_step_4.jpg",
             "alignmentCheck": "Total muscle release, quiet belly breathing",
             "durationSeconds": 45,
             "breathCue": "Long sigh out through mouth"
@@ -470,7 +470,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Sit or lie comfortably with arms resting at sides. Take a calm breath in and out.",
             "parentCue": "\"Let's find our peaceful ocean floor and get ready to be starfish.\"",
             "diagramType": "fetal_tuck",
-            "imageUrl": "/images/moro_starfish.jpg",
+            "imageUrl": "/images/moro_step_1.jpg",
             "alignmentCheck": "Spine neutral, shoulders relaxed away from ears, gaze soft",
             "durationSeconds": 10,
             "breathCue": "Inhale slowly through nose, soft exhale"
@@ -483,7 +483,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Curl tight into a little sleeping starfish ball.",
             "parentCue": "\"Little tucked starfish asleep on the warm ocean floor.\"",
             "diagramType": "fetal_tuck",
-            "imageUrl": "/images/moro_starfish.jpg",
+            "imageUrl": "/images/moro_step_2.jpg",
             "alignmentCheck": "Right arm & right leg crossed over left, chin gently tucked",
             "durationSeconds": 15,
             "breathCue": "Inhale softly into back of ribs"
@@ -496,7 +496,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Flow open wide like a giant starfish reaching through warm water.",
             "parentCue": "\"Starfish opens wide to say hello to the sunshine... 1, 2, 3, 4, 5!\"",
             "diagramType": "starfish_open",
-            "imageUrl": "/images/moro_starfish.jpg",
+            "imageUrl": "/images/moro_step_3.jpg",
             "alignmentCheck": "Limbs opening simultaneously, buttery smooth motion without sudden jerking",
             "durationSeconds": 30,
             "breathCue": "Slow diaphragmatic inhale expanding belly and chest"
@@ -509,7 +509,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Hold your bright starfish pose, then hug back in with opposite arms crossed.",
             "parentCue": "\"Fold back into your cozy shell, hugging tight with big deep breath out: shhhhh.\"",
             "diagramType": "meatball_hug",
-            "imageUrl": "/images/moro_starfish.jpg",
+            "imageUrl": "/images/moro_step_4.jpg",
             "alignmentCheck": "Opposite limb cross (LEFT over right), chin tucked to sternum",
             "durationSeconds": 30,
             "breathCue": "Audible 5-second exhalation through pursed lips"
@@ -845,7 +845,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Fly like Superman! Keep legs straight and knees off the mat. Breathe smoothly.",
             "parentCue": "\"Superman flying high over the city... 1, 2, 3, 4, 5!\"",
             "diagramType": "superman_prone",
-            "imageUrl": "/images/tlr_superman.jpg",
+            "imageUrl": "/images/tlr_step_1.jpg",
             "alignmentCheck": "Knees off floor, arms extended, neck long with chin tucked",
             "durationSeconds": 30,
             "breathCue": "Inhale gently into chest; do NOT hold breath"
@@ -858,7 +858,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Roll like a smooth log onto your back and pull into a tight meatball! Hold for 5 seconds.",
             "parentCue": "\"Smooth roll into a tight little meatball... holding strong for 5!\"",
             "diagramType": "meatball_hug",
-            "imageUrl": "/images/tlr_superman.jpg",
+            "imageUrl": "/images/tlr_step_2.jpg",
             "alignmentCheck": "Knees tightly hugged, chin to chest, head floating 1 inch off floor",
             "durationSeconds": 30,
             "breathCue": "Slow audible exhale while holding tuck"
@@ -871,7 +871,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Completely release all muscle tension between holds.",
             "parentCue": "\"Melting into the soft floor... heavy and calm.\"",
             "diagramType": "mat_setup",
-            "imageUrl": "/images/tlr_superman.jpg",
+            "imageUrl": "/images/tlr_step_3.jpg",
             "alignmentCheck": "Complete release of extensor and flexor tone",
             "durationSeconds": 20,
             "breathCue": "Deep belly breath"
@@ -1207,7 +1207,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Look straight down at mat. Inhale gently through nose.",
             "parentCue": "\"Airplane on the runway, wings spread wide.\"",
             "diagramType": "mat_setup",
-            "imageUrl": "/images/landau_airplane.jpg",
+            "imageUrl": "/images/landau_step_1.jpg",
             "alignmentCheck": "Face down, arms 90 degrees out to sides, legs flat",
             "durationSeconds": 20,
             "breathCue": "Inhale softly through nose"
@@ -1220,7 +1220,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Hold smooth flight for 5 seconds while breathing steadily.",
             "parentCue": "\"Wings up! Flying smooth and steady through the clouds... 1, 2, 3, 4, 5.\"",
             "diagramType": "airplane_prone",
-            "imageUrl": "/images/landau_airplane.jpg",
+            "imageUrl": "/images/landau_step_2.jpg",
             "alignmentCheck": "Long neck, chin tucked, feet stay down on mat",
             "durationSeconds": 40,
             "breathCue": "Steady exhale during flight hold"
@@ -1233,7 +1233,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Rest for 5 seconds before next flight rep.",
             "parentCue": "\"Smooth landing on the soft grass.\"",
             "diagramType": "mat_setup",
-            "imageUrl": "/images/landau_airplane.jpg",
+            "imageUrl": "/images/landau_step_3.jpg",
             "alignmentCheck": "Complete muscular release onto floor",
             "durationSeconds": 30,
             "breathCue": "Soft belly breath"
@@ -1268,7 +1268,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Parent supports pelvis firmly.",
             "parentCue": "\"Draped over the peanut saddle like a relaxed puppy.\"",
             "diagramType": "peanut_ball_rock",
-            "imageUrl": "/images/landau_airplane.jpg",
+            "imageUrl": "/images/landau_step_1.jpg",
             "alignmentCheck": "Pelvis supported, arms relaxed forward",
             "durationSeconds": 20,
             "breathCue": "Inhale ease"
@@ -1281,7 +1281,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Hold 4 seconds with parent stabilizing hips.",
             "parentCue": "\"Reaching for the stars... 1, 2, 3, 4!\"",
             "diagramType": "airplane_prone",
-            "imageUrl": "/images/landau_airplane.jpg",
+            "imageUrl": "/images/landau_step_2.jpg",
             "alignmentCheck": "Thoracic extension supported by ball curve",
             "durationSeconds": 40,
             "breathCue": "Inhale as arms lift"
@@ -1294,7 +1294,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Rest for 10 seconds between repetitions.",
             "parentCue": "\"Melting like warm chocolate over the ball.\"",
             "diagramType": "peanut_ball_rock",
-            "imageUrl": "/images/landau_airplane.jpg",
+            "imageUrl": "/images/landau_step_3.jpg",
             "alignmentCheck": "Complete relaxation of paraspinal muscles",
             "durationSeconds": 30,
             "breathCue": "Long sigh"
@@ -1508,7 +1508,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Press lower back gently into the floor so there is no gap under the lumbar spine.",
             "parentCue": "\"Glue your lower back to the floor like a stamp.\"",
             "diagramType": "mat_setup",
-            "imageUrl": "/images/spinal_galant.jpg",
+            "imageUrl": "/images/spinal_galant_step_1.jpg",
             "alignmentCheck": "Lower back flat against carpet, heels resting",
             "durationSeconds": 20,
             "breathCue": "Inhale softly into back ribs"
@@ -1521,7 +1521,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Wrists and heels must remain glued to floor! Arms and legs must reach peak at exact same instant.",
             "parentCue": "\"Moving like slow-motion clock hands... sweeping fresh snow... 1, 2, 3, 4, 5.\"",
             "diagramType": "snow_angel_sweep",
-            "imageUrl": "/images/spinal_galant.jpg",
+            "imageUrl": "/images/spinal_galant_step_2.jpg",
             "alignmentCheck": "4 limbs move at identical speed, wrists/heels on floor",
             "durationSeconds": 45,
             "breathCue": "Inhale on opening sweep, exhale on closing sweep"
@@ -1534,7 +1534,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Massages lumbar paraspinal muscles against the firm floor.",
             "parentCue": "\"Rocking gently side to side like a little rowboat.\"",
             "diagramType": "meatball_hug",
-            "imageUrl": "/images/spinal_galant.jpg",
+            "imageUrl": "/images/spinal_galant_step_3.jpg",
             "alignmentCheck": "Gentle lumbar rocking, steady breath",
             "durationSeconds": 35,
             "breathCue": "Slow diaphragmatic breath"
@@ -1870,7 +1870,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Keep belly and chest flat against the mat.",
             "parentCue": "\"Lying like a sleepy lizard on a warm rock.\"",
             "diagramType": "mat_setup",
-            "imageUrl": "/images/amphibian_crawling.jpg",
+            "imageUrl": "/images/amphibian_step_1.jpg",
             "alignmentCheck": "Flat belly, arms extended, legs straight",
             "durationSeconds": 20,
             "breathCue": "Inhale ease"
@@ -1883,7 +1883,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Hold for 5 seconds. Keep pelvis flat on floor.",
             "parentCue": "\"Slide right knee and elbow up... lizard crawling on the tree branch... 1, 2, 3, 4, 5.\"",
             "diagramType": "amphibian_slide",
-            "imageUrl": "/images/amphibian_crawling.jpg",
+            "imageUrl": "/images/amphibian_step_2.jpg",
             "alignmentCheck": "Right knee at 90 degrees, pelvis flat, left leg straight",
             "durationSeconds": 40,
             "breathCue": "Exhale as knee slides up"
@@ -1896,7 +1896,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Hold for 5 seconds. Breathe smoothly.",
             "parentCue": "\"Smooth switch to the left side... steady and slow... 1, 2, 3, 4, 5.\"",
             "diagramType": "amphibian_slide",
-            "imageUrl": "/images/amphibian_crawling.jpg",
+            "imageUrl": "/images/amphibian_step_3.jpg",
             "alignmentCheck": "Left knee at 90 degrees, chest grounded",
             "durationSeconds": 40,
             "breathCue": "Inhale straight, exhale slide"
@@ -2171,7 +2171,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Lock elbows gently in a soft, stable position. Look straight down between hands.",
             "parentCue": "\"Sturdy lizard on a rock, four paws grounded solid.\"",
             "diagramType": "quadruped_table",
-            "imageUrl": "/images/atnr_lizard.jpg",
+            "imageUrl": "/images/atnr_step_1.jpg",
             "alignmentCheck": "Hands below shoulders, flat back, soft unlocked elbows",
             "durationSeconds": 15,
             "breathCue": "Inhale softly into ribs"
@@ -2184,7 +2184,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Keep left arm rock steady! Hold the fencer crawl for 5 seconds.",
             "parentCue": "\"Lizard looks right to spot a cricket... left arm stays strong like a tree branch... 1, 2, 3, 4, 5.\"",
             "diagramType": "head_turn_lizard",
-            "imageUrl": "/images/atnr_lizard.jpg",
+            "imageUrl": "/images/atnr_step_2.jpg",
             "alignmentCheck": "Face turned 90 degrees right, skull-side (left) elbow remains straight and steady",
             "durationSeconds": 30,
             "breathCue": "Exhale as head turns; steady diaphragmatic breathing during hold"
@@ -2197,7 +2197,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Switch sides smoothly. Keep back flat without dropping belly.",
             "parentCue": "\"Smooth turn to the left... right arm locked strong like steel... 1, 2, 3, 4, 5.\"",
             "diagramType": "head_turn_lizard",
-            "imageUrl": "/images/atnr_lizard.jpg",
+            "imageUrl": "/images/atnr_step_3.jpg",
             "alignmentCheck": "Face turned 90 degrees left, skull-side (right) elbow remains unbent",
             "durationSeconds": 30,
             "breathCue": "Slow breath cycle"
@@ -2533,7 +2533,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Lock hips directly over knees! Do not allow bottom to drift backward.",
             "parentCue": "\"Sturdy wooden table... glue knees to the floor directly under hips!\"",
             "diagramType": "quadruped_table",
-            "imageUrl": "/images/stnr_cat_cow.jpg",
+            "imageUrl": "/images/stnr_step_1.jpg",
             "alignmentCheck": "Hips stacked vertically above knees at 90 degrees, hands under shoulders",
             "durationSeconds": 15,
             "breathCue": "Inhale gently into belly"
@@ -2546,7 +2546,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Arch back up to the ceiling while exhaling slowly. Keep arms locked straight.",
             "parentCue": "\"Angry Halloween cat arches back high to the moon... push arms straight... 1, 2, 3, 4, 5!\"",
             "diagramType": "cat_cow_flex",
-            "imageUrl": "/images/stnr_cat_cow.jpg",
+            "imageUrl": "/images/stnr_step_2.jpg",
             "alignmentCheck": "Spine rounded high, chin tucked to sternum, elbows locked straight",
             "durationSeconds": 30,
             "breathCue": "Long slow exhale through mouth while arching"
@@ -2559,7 +2559,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Belly dips down, look up toward wall. Keep hips frozen over knees.",
             "parentCue": "\"Happy cow dips belly to eat sweet grass... hips stay frozen like statues... 1, 2, 3, 4, 5!\"",
             "diagramType": "cat_cow_extend",
-            "imageUrl": "/images/stnr_cat_cow.jpg",
+            "imageUrl": "/images/stnr_step_3.jpg",
             "alignmentCheck": "Chest lifted, head up, hips remained vertically above knees (no sitting back)",
             "durationSeconds": 30,
             "breathCue": "Slow diaphragmatic inhale through nose while dipping"
@@ -2894,7 +2894,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Spread all 5 fingers wide apart! Feel the stretch across the palm.",
             "parentCue": "\"Star shining bright in the night sky... stretch fingers wide!\"",
             "diagramType": "starfish_open",
-            "imageUrl": "/images/palmar_hand.jpg",
+            "imageUrl": "/images/palmar_step_1.jpg",
             "alignmentCheck": "Fingers splayed wide, web space open, wrist straight",
             "durationSeconds": 15,
             "breathCue": "Inhale as fingers spread"
@@ -2907,7 +2907,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Make a gentle circle with thumb and index, then middle, ring, pinky. Keep mouth relaxed and loose.",
             "parentCue": "\"Magic circle... tap index, middle, ring, pinky... soft jaw!\"",
             "diagramType": "finger_opposition",
-            "imageUrl": "/images/palmar_hand.jpg",
+            "imageUrl": "/images/palmar_step_2.jpg",
             "alignmentCheck": "Only active finger touches thumb, other 3 fingers remain extended, mouth closed and still",
             "durationSeconds": 45,
             "breathCue": "Breathe smoothly through nose"
@@ -2920,7 +2920,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Squeeze soft, then explode fingers open into a giant star!",
             "parentCue": "\"Squeeze the soft cloud... and burst open into a star!\"",
             "diagramType": "starfish_open",
-            "imageUrl": "/images/palmar_hand.jpg",
+            "imageUrl": "/images/palmar_step_3.jpg",
             "alignmentCheck": "Complete release of fist between pulses",
             "durationSeconds": 30,
             "breathCue": "Exhale on squeeze, inhale on spread"
@@ -3255,7 +3255,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Glue the heel firmly to the edge of the towel. Heel stays frozen on floor!",
             "parentCue": "\"Heel glued to the floor like heavy anchor. Only toes will move!\"",
             "diagramType": "towel_curl",
-            "imageUrl": "/images/plantar_exercise.jpg",
+            "imageUrl": "/images/plantar_step_1.jpg",
             "alignmentCheck": "Heel firmly grounded, 90-degree knee angle, flat towel",
             "durationSeconds": 15,
             "breathCue": "Inhale tall through spine"
@@ -3268,7 +3268,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Scrunch, release, reach forward, scrunch again. Keep heel glued down!",
             "parentCue": "\"Toes like caterpillar feet... scrunching the magic carpet closer... 1, 2, 3!\"",
             "diagramType": "towel_curl",
-            "imageUrl": "/images/plantar_exercise.jpg",
+            "imageUrl": "/images/plantar_step_2.jpg",
             "alignmentCheck": "Heel remains anchored, intrinsic arch lifts on every scrunch",
             "durationSeconds": 45,
             "breathCue": "Exhale as toes curl, inhale as toes spread forward"
@@ -3281,7 +3281,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Pinch the marble with toes, lift, and drop into the cup. Repeat 5 times.",
             "parentCue": "\"Crane claw picks up the shiny gemstone... drop it safe in the treasure cup!\"",
             "diagramType": "marble_pickup",
-            "imageUrl": "/images/plantar_exercise.jpg",
+            "imageUrl": "/images/plantar_step_3.jpg",
             "alignmentCheck": "Clean toe pinch, ankle stability, controlled release",
             "durationSeconds": 45,
             "breathCue": "Smooth natural breathing"
@@ -3555,7 +3555,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Apply gentle, calming warmth to relax facial and jaw muscles.",
             "parentCue": "\"Feel my warm hands holding your cheeks like gentle sunshine.\"",
             "diagramType": "facial_circle",
-            "imageUrl": "/images/rooting_exercise.jpg",
+            "imageUrl": "/images/rooting_step_1.jpg",
             "alignmentCheck": "Warm hands on cheeks, jaw unclenched, calm eye contact",
             "durationSeconds": 20,
             "breathCue": "Inhale through nose together"
@@ -3568,7 +3568,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Firm, continuous pressure (not ticklish!). Child keeps head facing straight forward.",
             "parentCue": "\"Drawing our gentle diamond frame around our smiling lips... nose stays straight!\"",
             "diagramType": "facial_circle",
-            "imageUrl": "/images/rooting_exercise.jpg",
+            "imageUrl": "/images/rooting_step_2.jpg",
             "alignmentCheck": "Firm stroke around lips without head turning, relaxed jaw",
             "durationSeconds": 45,
             "breathCue": "Exhale as fingers glide across cheek"
@@ -3581,7 +3581,7 @@ export const REFLEX_DATABASE: Record<ReflexId, ReflexInfo> = {
             "actionInstruction": "Pucker tight, then blow smooth air out like blowing bubbles in milk.",
             "parentCue": "\"Funny fish lips... 1, 2, 3... now blow the gentle wind: whooooo!\"",
             "diagramType": "straw_bubble_blow",
-            "imageUrl": "/images/rooting_exercise.jpg",
+            "imageUrl": "/images/rooting_step_3.jpg",
             "alignmentCheck": "Symmetrical lip pucker, controlled 5-second exhalation",
             "durationSeconds": 30,
             "breathCue": "Audible 5-second blow through pursed lips"
